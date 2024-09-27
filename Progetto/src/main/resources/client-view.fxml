@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+
+<StackPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.progetto.client.ClientController">
+   <children>
+      <AnchorPane fx:id="loginPane" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Button layoutX="265.0" layoutY="257.0" mnemonicParsing="false" onMouseClicked="#onEnterButtonClick" prefHeight="26.0" prefWidth="70.0" text="Enter" />
+            <TextField fx:id="usr" layoutX="190.0" layoutY="173.0" prefHeight="26.0" prefWidth="219.0" />
+            <Label layoutX="255.0" layoutY="87.0" text="Enter your email:" />
+            <Label fx:id="errorLabel" layoutX="27.0" layoutY="316.0" prefHeight="34.0" prefWidth="538.0" textAlignment="CENTER" />
+         </children>
+      </AnchorPane>
+      <TabPane fx:id="mainPane" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Main Tab">
+               <content>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="371.0" prefWidth="600.0">
+                     <children>
+                        <Label fx:id="username" layoutX="9.0" layoutY="45.0" prefHeight="34.0" prefWidth="151.0" text="Account Name" />
+                        <ListView fx:id="msgList" layoutX="10.0" layoutY="84.0" prefHeight="278.0" prefWidth="150.0" />
+                        <TextArea fx:id="msgTxt" layoutX="179.0" layoutY="120.0" prefHeight="122.0" prefWidth="406.0" wrapText="true" />
+                        <GridPane layoutX="179.0" layoutY="15.0" prefHeight="79.0" prefWidth="406.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="281.5999755859375" minWidth="10.0" prefWidth="200.79998779296875" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="223.20003662109377" minWidth="6.399987792968773" prefWidth="204.80001220703127" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="From" />
+                              <Label text="To" GridPane.rowIndex="1" />
+                              <Label text="Argument" GridPane.rowIndex="2" />
+                              <Label fx:id="msgFrom" prefHeight="18.0" prefWidth="138.0" GridPane.columnIndex="1" />
+                              <Label fx:id="msgTo" prefHeight="18.0" prefWidth="230.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="msgArgument" prefHeight="18.0" prefWidth="139.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                        <Button fx:id="deleteButton" layoutX="522.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#deleteSelectedEmail" prefHeight="26.0" prefWidth="54.0" text="Delete" />
+                        <Button fx:id="allReply" layoutX="517.0" layoutY="258.0" mnemonicParsing="false" onMouseClicked="#onReplyAllButtonClick" text="Reply-All" />
+                        <Button fx:id="singleReply" layoutX="453.0" layoutY="258.0" mnemonicParsing="false" onMouseClicked="#onSingleReplyButtonClick" prefHeight="26.0" prefWidth="54.0" text="Reply" />
+                        <Label fx:id="IDlbl" layoutX="179.0" layoutY="101.0" prefHeight="18.0" prefWidth="50.0" />
+                        <TextArea fx:id="replyText" layoutX="179.0" layoutY="258.0" prefHeight="58.0" prefWidth="258.0" />
+                        <Button fx:id="forwardButton" layoutX="450.0" layoutY="294.0" mnemonicParsing="false" onMouseClicked="#onForwardButtonClick" text="Forward" />
+                        <Label fx:id="showError" layoutX="179.0" layoutY="328.0" prefHeight="34.0" prefWidth="410.0" />
+                        <Circle fx:id="circleConnection" fill="WHITE" layoutX="21.0" layoutY="28.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Label fx:id="lblConnection" layoutX="35.0" layoutY="20.0" prefHeight="18.0" prefWidth="102.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+          <Tab text="New Message Tab">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="13.0" layoutY="14.0" prefHeight="70.0" prefWidth="574.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="289.0" text="Send To" />
+                              <Label prefHeight="18.0" prefWidth="286.0" text="Argument" GridPane.rowIndex="1" />
+                              <TextField fx:id="newmsgTo" GridPane.columnIndex="1" />
+                              <TextField fx:id="newmsgArgument" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                        <TextArea fx:id="newmsgTxt" layoutX="10.0" layoutY="101.0" prefHeight="200.0" prefWidth="577.0" />
+                        <Button fx:id="newmsgButton" layoutX="495.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#onNewMessageButtonClick" text="New Message" />
+                        <Label fx:id="showErrorNewMsg" layoutX="11.0" layoutY="317.0" prefHeight="46.0" prefWidth="462.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</StackPane>

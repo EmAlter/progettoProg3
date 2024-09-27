@@ -1,0 +1,17 @@
+4WRL&a@gmail.com&i@gmail.com&Forwarded: REPLY: Prova1&04/06/2023 at 09:50&This is the email originally sent from: i@gmail.com to e@gmail.com
+ in date 04/06/2023 at 09:50
+[...
+Testo1
+--------------------------------------
+04/06/2023 at 09:49
+i@gmail.com says:
+Testo2
+--------------------------------------
+04/06/2023 at 09:49
+e@gmail.com says:
+Testo3
+--------------------------------------
+04/06/2023 at 09:50
+i@gmail.com says:
+single i
+...]
